@@ -5,15 +5,14 @@ angular.module('app.factory', [])
 	var codeFac = {};
 
 // Create post factory to post data to api
-	codeFac.create = function(codeData){
-
-		// return	$http.post('http://boiling-mesa-13925.herokuapp.com/api/new-code',codeData)
+	codeFac.updateEntry = function(updateEntry){
+		
+		return	$http.post('http://boiling-mesa-13925.herokuapp.com//api/task-manager/update', updateEntry);
 	}
-
 
 // Create get factory to retrieve data from api
 	codeFac.all = function(){
-		return	$http.get('http://localhost:3000/api/task-manager');
+		return	$http.get('http://boiling-mesa-13925.herokuapp.com//api/task-manager');
 	}
 
 	return	codeFac;

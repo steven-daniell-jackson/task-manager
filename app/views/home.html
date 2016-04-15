@@ -16,7 +16,7 @@
     <div ng-repeat="entry in entries" ng-model="done">
         <div ng-if="entry.checked == 'true' && entry.archived == 'false'">
 
-            <input id="item{{entry._id}}" type="checkbox" checked ng-click="update()">>
+            <input id="item{{entry._id}}" type="checkbox" checked ng-click="update()">
             <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
         </div>
 
@@ -36,8 +36,6 @@
 
 </div>
 
-
-{{update}}
 
 </div>
 </div>

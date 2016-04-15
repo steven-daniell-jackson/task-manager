@@ -18,7 +18,10 @@ TaskList.all()
 
 $scope.update = function(e){
 
-  console.log(this.entry);
+var test = TaskList.updateEntry(this.entry);
+console.log(test);
+  // console.log(this.entry);
+
 }
 
 
