@@ -1,0 +1,1 @@
+angular.module('taskManager', ['app.routes', 'app.directives', 'app.factory', 'app.controllers'])

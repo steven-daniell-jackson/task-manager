@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Steven Jackson's Task List</h1>
+  <div class="items">
+
+    <h2>Not Done</h2>
+    <div ng-repeat="entry in entries" >
+        <div ng-if="entry.checked == 'false'">
+
+            <input id="item{{entry._id}}" type="checkbox" ng-click="update()">
+            <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
+        </div>
+
+    </div>
+    <h2>Done</h2>
+
+    <div ng-repeat="entry in entries" ng-model="done">
+        <div ng-if="entry.checked == 'true' && entry.archived == 'false'">
+
+            <input id="item{{entry._id}}" type="checkbox" checked ng-click="update()">>
+            <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
+        </div>
+
+    </div>
+
+<h2>Archived</h2>
+
+
+    <div ng-repeat="entry in entries" ng-model="archive">
+        <div ng-if="entry.archived == 'true' && entry.checked == 'true'">
+
+            <input id="item{{entry._id}}" type="checkbox" checked disabled>
+            <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
+        </div>
+
+    </div>
+
+</div>
+
+
+{{update}}
+
+</div>
+</div>
