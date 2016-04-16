@@ -125,6 +125,7 @@ input:checked {
 label {
   display: block;
   position: relative;
+  z-index: 0;
   padding: 15px 0 15px 45px;
   border-top: 1px dashed #fff;
   -webkit-box-ordinal-group: 5;
@@ -214,8 +215,10 @@ input:checked + label::before {
   }
 }
 
- input[type=checkbox] {display: none;}
-
+input[type=checkbox] {display: none;}
+label i {font-size: 16px; color: #fff; z-index: 999; border: 1px solid #c4c4c4; border-radius: 50%; padding: 7px; background-color: #009900;}
+label i.fa-times {color: #fff; background-color: #b20000;}
+label span {margin: -5px 0 0 0;}
 
 
 

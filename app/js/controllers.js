@@ -18,11 +18,37 @@ TaskList.all()
 
 $scope.update = function(e){
 
-var test = TaskList.updateEntry(this.entry);
-console.log(test);
+TaskList.updateEntry(this.entry);
+ location.reload();
   // console.log(this.entry);
 
 }
+
+$scope.delete = function(){
+  console.log("delete");
+}
+
+$scope.archive = function(){
+
+if (confirm("Archive?") == true) {
+   TaskList.archiveEntry(this.entry);
+   location.reload();
+  console.log("archived");
+}
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
   }]);
