@@ -15,6 +15,11 @@ angular.module('app.factory', [])
 		
 		return	$http.post('http://localhost:3000/api/task-manager/archive', archiveEntry);
 	}
+	// Create post factory to post data to api
+	codeFac.deleteEntry = function(archiveEntry){
+		
+		return	$http.post('http://localhost:3000/api/task-manager/delete', archiveEntry);
+	}
 
 // Create get factory to retrieve data from api
 	codeFac.all = function(){

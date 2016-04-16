@@ -25,6 +25,8 @@ TaskList.updateEntry(this.entry);
 }
 
 $scope.delete = function(){
+  TaskList.deleteEntry(this.entry);
+   location.reload();
   console.log("delete");
 }
 
