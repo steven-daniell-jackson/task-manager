@@ -1,6 +1,7 @@
-<div class="container">
-  <h1>Steven Jackson's Task List</h1>
-  <div class="items">
+
+<h1>Steven Jackson's Task List <span class="pull-right"><a ng-click="new()"><i class="fa fa-plus-circle" aria-hidden="true"></i></a></span></h1>
+<div class="items">
+
 
     <h2>Not Done</h2>
     <div ng-repeat="entry in entries" >
@@ -8,39 +9,42 @@
 
             <input id="item{{entry._id}}" type="checkbox" ng-click="update()">
             <label for="item{{entry._id}}">{{entry.taskTitle}}<span class="pull-right">
-            <a ng-click="delete()"><i class="fa fa-times" aria-hidden="true">
-            </i></a></label>
+                <a ng-click="delete()"><i class="fa fa-times" aria-hidden="true">
+                </i></a></span></label>
+            </div>
+
+        </div>
+        <h2>Done</h2>
+
+        <div ng-repeat="entry in entries" ng-model="done">
+            <div ng-if="entry.checked == 'true' && entry.archived == 'false'">
+
+                <input id="item{{entry._id}}" type="checkbox" checked ng-click="update()">
+                <label for="item{{entry._id}}">{{entry.taskTitle}} <span class="pull-right">
+                    <a ng-click="archive()"><i class="fa fa-archive" aria-hidden="true"></i></a>
+                    <a ng-click="delete()"><i class="fa fa-times" aria-hidden="true"></i></a>
+                </span></label>
+            </div>
+
+        </div>
+
+        <h2  ng-click="toggleArchive()">Archived</h2>
+
+
+        <div ng-repeat="entry in entries.slice().reverse()" ng-model="archive">
+
+            <div ng-show="archiveTog">
+                <div ng-if="entry.archived == 'true' && entry.checked == 'true'">
+
+                    <input id="item{{entry._id}}" type="checkbox" checked disabled>
+                    <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
+                </div>
+            </div>
+
         </div>
 
     </div>
-    <h2>Done</h2>
-
-    <div ng-repeat="entry in entries" ng-model="done">
-        <div ng-if="entry.checked == 'true' && entry.archived == 'false'">
-
-            <input id="item{{entry._id}}" type="checkbox" checked ng-click="update()">
-            <label for="item{{entry._id}}">{{entry.taskTitle}} <span class="pull-right">
-            <a ng-click="archive()"><i class="fa fa-archive" aria-hidden="true"></i></a>
-            <a ng-click="delete()"><i class="fa fa-times" aria-hidden="true"></i></a>
-            </span></label>
-        </div>
-
-    </div>
-
-<h2>Archived</h2>
-
-
-    <div ng-repeat="entry in entries" ng-model="archive">
-        <div ng-if="entry.archived == 'true' && entry.checked == 'true'">
-
-            <input id="item{{entry._id}}" type="checkbox" checked disabled>
-            <label for="item{{entry._id}}">{{entry.taskTitle}}</label>
-        </div>
-
-    </div>
-
-</div>
 
 
 </div>
-</div>
+
